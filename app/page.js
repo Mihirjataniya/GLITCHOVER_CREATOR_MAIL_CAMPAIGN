@@ -352,7 +352,7 @@ export default function Home() {
           )}
 
           <div className="flex items-center justify-center">
-            <Link href={'/'} className="text-center text-gray-400 mb-8 font-['Rajdhani'] underline underline-offset-4 font-bold text-md ">
+            <Link href={'https://www.instagram.com/p/DM26Wv8sTBT/'} className="text-center text-gray-400 mb-8 font-['Rajdhani'] underline underline-offset-4 font-bold text-md ">
               TAG YOUR FAVOURITE CREATOR ON INSTAGRAM
             </Link>
           </div>
