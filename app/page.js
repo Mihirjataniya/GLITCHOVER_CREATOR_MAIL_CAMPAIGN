@@ -1,65 +1,300 @@
-import Image from "next/image";
+"use client";
+
+import { useState, useMemo } from "react";
+import Link from "next/link";
+import { getRandomTemplate } from "./templates.js"; // Import the template function
+
+const streamers = [
+  {
+    name: "NeonGamer",
+    email: "neongamer@stream.io",
+    image: "/neongamer.png",
+    platform: "youtube",
+    channelName: "NeonGamer",
+  },
+  {
+    name: "CosmicKnight",
+    email: "cosmicknight@stream.io",
+    image: "/cosmicknight.png",
+    platform: "twitch",
+    channelName: "CosmicKnight",
+  },
+  {
+    name: "StarDrifter",
+    email: "stardrifter@stream.io",
+    image: "/stardrifter.png",
+    platform: "youtube",
+    channelName: "StarDrifter",
+  },
+  {
+    name: "QuantumAce",
+    email: "quantumace@stream.io",
+    image: "/quantumace.png",
+    platform: "twitch",
+    channelName: "QuantumAce",
+  },
+  {
+    name: "VoidWalker",
+    email: "voidwalker@stream.io",
+    image: "/voidwalker.png",
+    platform: "youtube",
+    channelName: "VoidWalker",
+  },
+];
 
 export default function Home() {
+  const [selectedStreamer, setSelectedStreamer] = useState(null);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+  const [isGenerating, setIsGenerating] = useState(false);
+
+  const filteredStreamers = useMemo(() => {
+    return streamers.filter((streamer) =>
+      streamer.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  }, [searchQuery]);
+
+  const generateMessage = async (streamer) => {
+    setIsGenerating(true);
+
+    // Simulate a slight delay for better UX (optional)
+    setTimeout(() => {
+      const template = getRandomTemplate(streamer.name, streamer.platform);
+      setSubject(template.subject);
+      setMessage(template.message);
+      setIsGenerating(false);
+    }, 800);
+  };
+
+  const handleStreamerSelect = async (streamer) => {
+    setSelectedStreamer(streamer);
+    setDropdownOpen(false);
+    setSearchQuery("");
+    await generateMessage(streamer);
+  };
+
+  const handleSendEmail = () => {
+    if (!selectedStreamer) return;
+
+    const encodedSubject = encodeURIComponent(subject);
+    const encodedBody = encodeURIComponent(message);
+
+    window.location.href = `mailto:${selectedStreamer.email}?Cc=support@glitchover.com&subject=${encodedSubject}&body=${encodedBody}`;
+
+  };
+
+  const getChannelUrl = (streamer) => {
+    if (streamer.platform === "youtube") {
+      return `https://youtube.com/@${streamer.channelName}`;
+    }
+    return `https://twitch.tv/${streamer.channelName}`;
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.js file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="min-h-screen relative overflow-hidden flex items-center justify-center p-4">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('https://res.cloudinary.com/dkzp8h6xw/image/upload/f_auto,q_auto/v1725446926/fc0dcd9b70a90b6d55d070815dff4af0_wmzh70.webp')" }}
+      />
+
+      {/* Overlay gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-purple-900/30 to-black/70" />
+
+      {/* Main Card */}
+      <div className="relative z-10 w-full max-w-md">
+        <div className="bg-black/60 backdrop-blur-xl rounded-2xl p-6 sm:p-8 border border-[#40FFFF]/30 shadow-[0_0_30px_rgba(64,255,255,0.3)]">
+          {/* Title */}
+          <div className="flex justify-center mb-4">
+            <img src={"/logo2.png"} alt="Glitchover" />
+          </div>
+          <p className="text-center text-gray-400 mb-8 font-['Rajdhani'] text-sm">
+            Send a message to your favorite streamer
           </p>
+
+          {/* Custom Dropdown */}
+          <div className="mb-6">
+            <label className="block text-[#40FFFF] font-['Rajdhani'] text-sm font-semibold mb-2 tracking-wide">
+              SELECT STREAMER
+            </label>
+            <div className="relative">
+              <button
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+                className="w-full bg-black/50 border-2 border-[#40FFFF]/50 rounded-lg px-4 py-3 text-left text-white font-['Exo_2'] flex items-center justify-between hover:border-[#40FFFF] hover:shadow-[0_0_15px_rgba(64,255,255,0.5)] transition-all duration-300"
+              >
+                {selectedStreamer ? (
+                  <div className="flex items-center gap-3">
+                    <img
+                      src={selectedStreamer.image}
+                      alt={selectedStreamer.name}
+                      className="w-8 h-8 rounded-full object-cover border-2 border-[#40FFFF]/50"
+                    />
+                    <span>{selectedStreamer.name}</span>
+                  </div>
+                ) : (
+                  <span>Choose a streamer...</span>
+                )}
+                <svg
+                  className={`w-5 h-5 text-[#40FFFF] transition-transform duration-300 ${dropdownOpen ? "rotate-180" : ""
+                    }`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+
+              {/* Dropdown Menu */}
+              {dropdownOpen && (
+                <div className="absolute top-full mt-2 w-full bg-black/90 backdrop-blur-xl border-2 border-[#40FFFF]/50 rounded-lg overflow-hidden shadow-[0_0_20px_rgba(64,255,255,0.4)] z-50">
+                  {/* Search Input */}
+                  <div className="p-3 border-b border-[#40FFFF]/20">
+                    <div className="relative">
+                      <input
+                        type="text"
+                        placeholder="Search streamer..."
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        className="w-full bg-black/50 border border-[#40FFFF]/30 rounded-lg px-3 py-2 pl-10 text-white font-['Exo_2'] text-sm focus:outline-none focus:border-[#40FFFF] transition-all"
+                        onClick={(e) => e.stopPropagation()}
+                      />
+                      <svg
+                        className="w-4 h-4 text-[#40FFFF] absolute left-3 top-1/2 -translate-y-1/2"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+
+                  {/* Streamer List */}
+                  <div className="max-h-64 overflow-y-auto scrollbar-hide">
+                    {filteredStreamers.length > 0 ? (
+                      filteredStreamers.map((streamer) => (
+                        <button
+                          key={streamer.name}
+                          onClick={() => handleStreamerSelect(streamer)}
+                          className="w-full px-4 py-3 text-left text-white font-['Exo_2'] hover:bg-[#40FFFF]/20 hover:text-[#40FFFF] transition-all duration-200 border-b border-[#40FFFF]/10 last:border-b-0 flex items-center gap-3"
+                        >
+                          <img
+                            src={streamer.image}
+                            alt={streamer.name}
+                            className="w-10 h-10 rounded-full object-cover border-2 border-[#40FFFF]/30"
+                          />
+                          <span>{streamer.name}</span>
+                        </button>
+                      ))
+                    ) : (
+                      <div className="px-4 py-6 text-center text-gray-500 font-['Exo_2'] text-sm">
+                        No streamers found
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Regenerate Button */}
+          {selectedStreamer && (
+            <button
+              onClick={() => generateMessage(selectedStreamer)}
+              disabled={isGenerating}
+              className="w-full bg-black/50 border-2 border-[#40FFFF]/50 hover:border-[#40FFFF] text-[#40FFFF] font-['Rajdhani'] font-semibold py-3 rounded-lg transition-all duration-300 hover:shadow-[0_0_15px_rgba(64,255,255,0.4)] uppercase tracking-wider flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+              Regenerate Message
+            </button>
+          )}
+
+          {/* Email Preview */}
+          {selectedStreamer && (
+            <div className="space-y-4 my-6 animate-fadeIn">
+              {/* Loading State */}
+              {isGenerating && (
+                <div className="bg-black/50 border border-[#40FFFF]/30 rounded-lg px-4 py-8 text-center">
+                  <div className="flex flex-col items-center gap-4">
+                    <div className="relative">
+                      <div className="w-12 h-12 border-4 border-[#40FFFF]/20 border-t-[#40FFFF] rounded-full animate-spin"></div>
+                      <div className="absolute inset-0 w-12 h-12 border-4 border-transparent border-t-purple-500/50 rounded-full animate-spin animation-delay-150"></div>
+                    </div>
+                    <p className="text-[#40FFFF] font-['Rajdhani'] text-lg font-semibold animate-pulse">
+                      Crafting your message
+                    </p>
+                    <p className="text-gray-400 font-['Exo_2'] text-sm">
+                      Creating a personalized message for {selectedStreamer.name}
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              {/* Generated Content */}
+              {!isGenerating && subject && message && (
+                <>
+                  {/* Subject */}
+                  <div>
+                    <label className="block text-[#40FFFF] font-['Rajdhani'] text-sm font-semibold mb-2 tracking-wide">
+                      SUBJECT
+                    </label>
+                    <input
+                      type="text"
+                      value={subject}
+                      onChange={(e) => setSubject(e.target.value)}
+                      className="w-full bg-black/50 border border-[#40FFFF]/30 rounded-lg px-4 py-3 text-gray-300 font-['Exo_2'] shadow-[0_0_10px_rgba(64,255,255,0.2)] focus:outline-none focus:border-[#40FFFF] focus:shadow-[0_0_15px_rgba(64,255,255,0.4)] transition-all"
+                      placeholder="Enter subject..."
+                    />
+                  </div>
+
+                  {/* Body */}
+                  <div>
+                    <label className="block text-[#40FFFF] font-['Rajdhani'] text-sm font-semibold mb-2 tracking-wide">
+                      MESSAGE
+                    </label>
+                    <textarea
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      rows={8}
+                      className="w-full bg-black/50 border border-[#40FFFF]/30 rounded-lg px-4 py-3 text-gray-300 font-['Exo_2'] shadow-[0_0_10px_rgba(64,255,255,0.2)] focus:outline-none focus:border-[#40FFFF] focus:shadow-[0_0_15px_rgba(64,255,255,0.4)] transition-all resize-none scrollbar-hide"
+                      placeholder="Enter your message..."
+                    />
+                  </div>
+
+                  {/* Send Button */}
+                  <button
+                    onClick={handleSendEmail}
+                    className="w-full bg-[#40FFFF] hover:bg-[#33E6E6] text-black font-['Orbitron'] font-bold py-4 rounded-lg transition-all duration-300 shadow-[0_0_20px_rgba(64,255,255,0.6)] hover:shadow-[0_0_30px_rgba(64,255,255,0.9)] animate-pulse-glow uppercase tracking-wider"
+                  >
+                    SEND MESSAGE
+                  </button>
+                </>
+              )}
+            </div>
+          )}
+
+          <div className="flex items-center justify-center">
+            <Link href={'/'} className="text-center text-gray-400 mb-8 font-['Rajdhani'] underline underline-offset-4 font-bold text-md ">
+              TAG YOUR FAVOURITE CREATOR ON INSTAGRAM
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </div>
     </div>
   );
 }
