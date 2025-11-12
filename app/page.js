@@ -102,8 +102,74 @@ const streamers = [
     "image": "https://yt3.googleusercontent.com/8t2BSt6AIKqOZUNnfvfHJNBm478qUK2bVR-hz9P0VDBB5c2z43fF-Nltp6HZUN-MyoDppy6q430=s1000-c-k-c0x00ffffff-no-rj",
     "platform": "youtube",
     "channelName": "Sharkshee"
+  },
+   {
+    "name": "Lolzzz",
+    "email": "workwithlolzzz@gmail.com",
+    "image": "https://yt3.googleusercontent.com/ytc/AIdro_niGQI-25G_EfSn6qNtF7Ll8VT4eVvJfCQv849dtFycZtE=s1000-c-k-c0x00ffffff-no-rj-mo"
+  },
+  {
+    "name": "Crow",
+    "email": "Pubgmobilecrow@gmail.com",
+    "image": "https://yt3.ggpht.com/zWbDdBF7XnddqY7Rp9yjo82712ew6oVS9cYxTOb1N1ll42x2Oy8vbHEyLSlpBCRP7KzMkw6F=s1000-c-k-c0x00ffffff-no-rj-mo"
+  },
+  {
+    "name": "Kaashvi",
+    "email": "kaashplays@gmail.com",
+    "image": "https://yt3.googleusercontent.com/HGOGEKEVXtZM3A_YUK2xJzdIXEkMBUiQ4zEhBoPTZoz29TtM30ZSP-LNzxH_Atmsh3lfphBfMQ=s1000-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    "name": "Antaryami",
+    "email": "workforantaryami@gmail.com",
+    "image": "https://yt3.googleusercontent.com/ytc/AIdro_k1ZJsfL2jyhWY0hdGYiHZ3ErjQKZp_PtI3KIUx0LLwazg=s1000-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    "name": "Dobby",
+    "email": "deepanshirawat510@gmail.com",
+    "image": "https://yt3.googleusercontent.com/1CBUsBEsgsWmZTG4nqPjAn7dYkT0_vgDl4-L5YePft3a7TIVVpvmbsCf2pLYFo5cCoYVHcoqsg=s1000-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    "name": "Hastar",
+    "email": "workforhastar@gmail.com",
+    "image": "https://yt3.googleusercontent.com/lxIeUOdFkk4195EQLToo8iTbEdBYQhGryza1aqp42Ezd73l-R8zXNkXxINyjc8ojexJqS8PsqKk=s1000-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    "name": "Shreeman Legend",
+    "email": "work4shreeman@gmail.com",
+    "image": "https://yt3.googleusercontent.com/ytc/AIdro_lskMDtwWwmVb3KLSyXXgDfdx-Be9XHqbtigiWLtY_N-II=s1000-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    "name": "Bachu",
+    "email": "riyabusiness24@gmail.com",
+    "image": "https://yt3.googleusercontent.com/16wHEb_8RbEiBVXugKx1L3O8OtAueYfAvi7knVrWnfTvci3Ih290o7ZSPpYmRRaXPbBV5KJ89UI=s1000-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    "name": "Hector",
+    "email": "Workwithhector92@gmail.com",
+    "image": "https://yt3.googleusercontent.com/GbliEdEB5xksHeUmxGEmJGSDSFe3EfPjuLzu3KSe70aGIMmg01J50SLRixyb_ZFQMhcAnlJnvA=s1000-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    "name": "Mili kya Mili",
+    "email": "mili@8bitcreatives.in",
+    "image": "https://yt3.googleusercontent.com/ytc/AIdro_kvjd1utFABahAKwmAl1rtpRoYo_MwKBiBgWnSliWpRBRQ=s1000-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    "name": "Neutrino",
+    "email": "neu3nocodm@gmail.com",
+    "image": "https://yt3.googleusercontent.com/Y99rH9WCdYycAPOJmB9omIhU_GJ59gykSuVZ5JKrBsVAkPqWr06-Hpn2glSYoLFfFII9kFRxKA=s1000-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    "name": "City Sushi",
+    "email": "gamewithsakshi@gmail.com",
+    "image": "https://yt3.googleusercontent.com/5vcFFuIELMMzEnJgNvYGAppCtRyeZeRoAUsCHLXB6qi50BIjFe-lljFbst6CGRc-GQzLLitDNxk=s1000-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    "name": "Payal",
+    "email": "payaldhare@8bitcreatives.in",
+    "image": "https://yt3.googleusercontent.com/BkYkX3sg_NJTNZilCQhObmqDiyJER4_9U8VG7gNOxTnPnd-eXv-AVzJoau-VQQI0JBAaqbP7EA=s1000-c-k-c0x00ffffff-no-rj"
   }
 ];
+
 
 export default function Home() {
   const [selectedStreamer, setSelectedStreamer] = useState(null);
@@ -112,6 +178,9 @@ export default function Home() {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
+  const [showManualInput, setShowManualInput] = useState(false);
+  const [manualName, setManualName] = useState("");
+  const [manualEmail, setManualEmail] = useState("");
 
   const filteredStreamers = useMemo(() => {
     return streamers.filter((streamer) =>
@@ -119,12 +188,11 @@ export default function Home() {
     );
   }, [searchQuery]);
 
-  const generateMessage = async (streamer) => {
+  const generateMessage = async (streamerName, platform = "their platform") => {
     setIsGenerating(true);
 
-    // Simulate a slight delay for better UX (optional)
     setTimeout(() => {
-      const template = getRandomTemplate(streamer.name, streamer.platform);
+      const template = getRandomTemplate(streamerName, platform);
       setSubject(template.subject);
       setMessage(template.message);
       setIsGenerating(false);
@@ -135,7 +203,23 @@ export default function Home() {
     setSelectedStreamer(streamer);
     setDropdownOpen(false);
     setSearchQuery("");
-    await generateMessage(streamer);
+    setShowManualInput(false);
+    await generateMessage(streamer.name, streamer.platform);
+  };
+
+  const handleManualInputToggle = () => {
+    setShowManualInput(true);
+    setDropdownOpen(true);
+    setSelectedStreamer(null);
+  };
+
+  const handleManualSubmit = () => {
+    if (manualName.trim() && manualEmail.trim()) {
+      setSelectedStreamer({ name: manualName, email: manualEmail });
+      setDropdownOpen(false);
+      setShowManualInput(false);
+      generateMessage(manualName);
+    }
   };
 
   const handleSendEmail = () => {
@@ -145,7 +229,6 @@ export default function Home() {
     const encodedBody = encodeURIComponent(message);
 
     window.location.href = `mailto:${selectedStreamer.email}?Bcc=info@glitchover.com&subject=${encodedSubject}&body=${encodedBody}`;
-
   };
 
   const getChannelUrl = (streamer) => {
@@ -156,7 +239,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen relative overflow-hidden flex items-center justify-center p-4">
+    <div className="min-h-[100dvh] relative overflow-hidden flex items-center justify-center p-4">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -189,11 +272,13 @@ export default function Home() {
               >
                 {selectedStreamer ? (
                   <div className="flex items-center gap-3">
-                    <img
-                      src={selectedStreamer.image}
-                      alt={selectedStreamer.name}
-                      className="w-8 h-8 rounded-full object-cover border-2 border-[#40FFFF]/50"
-                    />
+                    {selectedStreamer.image && (
+                      <img
+                        src={selectedStreamer.image}
+                        alt={selectedStreamer.name}
+                        className="w-8 h-8 rounded-full object-cover border-2 border-[#40FFFF]/50"
+                      />
+                    )}
                     <span>{selectedStreamer.name}</span>
                   </div>
                 ) : (
@@ -218,56 +303,124 @@ export default function Home() {
               {/* Dropdown Menu */}
               {dropdownOpen && (
                 <div className="absolute top-full mt-2 w-full bg-black/90 backdrop-blur-xl border-2 border-[#40FFFF]/50 rounded-lg overflow-hidden shadow-[0_0_20px_rgba(64,255,255,0.4)] z-50">
-                  {/* Search Input */}
-                  <div className="p-3 border-b border-[#40FFFF]/20">
-                    <div className="relative">
-                      <input
-                        type="text"
-                        placeholder="Search streamer..."
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                        className="w-full bg-black/50 border border-[#40FFFF]/30 rounded-lg px-3 py-2 pl-10 text-white font-['Exo_2'] text-sm focus:outline-none focus:border-[#40FFFF] transition-all"
-                        onClick={(e) => e.stopPropagation()}
-                      />
-                      <svg
-                        className="w-4 h-4 text-[#40FFFF] absolute left-3 top-1/2 -translate-y-1/2"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-
-                  {/* Streamer List */}
-                  <div className="max-h-64 overflow-y-auto scrollbar-hide">
-                    {filteredStreamers.length > 0 ? (
-                      filteredStreamers.map((streamer) => (
-                        <button
-                          key={streamer.name}
-                          onClick={() => handleStreamerSelect(streamer)}
-                          className="w-full px-4 py-3 text-left text-white font-['Exo_2'] hover:bg-[#40FFFF]/20 hover:text-[#40FFFF] transition-all duration-200 border-b border-[#40FFFF]/10 last:border-b-0 flex items-center gap-3"
-                        >
-                          <img
-                            src={streamer.image}
-                            alt={streamer.name}
-                            className="w-10 h-10 rounded-full object-cover border-2 border-[#40FFFF]/30"
+                  {!showManualInput ? (
+                    <>
+                      {/* Search Input */}
+                      <div className="p-3 border-b border-[#40FFFF]/20">
+                        <div className="relative">
+                          <input
+                            type="text"
+                            placeholder="Search streamer..."
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            className="w-full bg-black/50 border border-[#40FFFF]/30 rounded-lg px-3 py-2 pl-10 text-white font-['Exo_2'] text-sm focus:outline-none focus:border-[#40FFFF] transition-all"
+                            onClick={(e) => e.stopPropagation()}
                           />
-                          <span>{streamer.name}</span>
-                        </button>
-                      ))
-                    ) : (
-                      <div className="px-4 py-6 text-center text-gray-500 font-['Exo_2'] text-sm">
-                        No streamers found
+                          <svg
+                            className="w-4 h-4 text-[#40FFFF] absolute left-3 top-1/2 -translate-y-1/2"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                            />
+                          </svg>
+                        </div>
                       </div>
-                    )}
-                  </div>
+
+                      {/* Streamer List */}
+                      <div className="max-h-64 overflow-y-auto scrollbar-hide relative">
+                        {filteredStreamers.length > 0 ? (
+                          filteredStreamers.map((streamer) => (
+                            <button
+                              key={streamer.name}
+                              onClick={() => handleStreamerSelect(streamer)}
+                              className="w-full px-4 py-3 text-left text-white font-['Exo_2'] hover:bg-[#40FFFF]/20 hover:text-[#40FFFF] transition-all duration-200 border-b border-[#40FFFF]/10 last:border-b-0 flex items-center gap-3"
+                            >
+                              <img
+                                src={streamer.image}
+                                alt={streamer.name}
+                                className="w-10 h-10 rounded-full object-cover border-2 border-[#40FFFF]/30"
+                              />
+                              <span>{streamer.name}</span>
+                            </button>
+                          ))
+                        ) : (
+                          <div className="px-4 py-6 text-center text-gray-500 font-['Exo_2'] text-sm">
+                            No streamers found
+                          </div>
+                        )}
+                        
+                        {/* Custom Entry Option */}
+                        <button
+                          onClick={handleManualInputToggle}
+                          className="w-full px-4 py-3 text-left text-[#40FFFF] font-['Exo_2'] font-semibold hover:bg-[#40FFFF]/20 transition-all duration-200 border-t-2 border-[#40FFFF]/30 flex items-center gap-3"
+                        >
+                          <div className="w-10 h-10 rounded-full bg-[#40FFFF]/20 border-2 border-[#40FFFF]/50 flex items-center justify-center">
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                            </svg>
+                          </div>
+                          <span>Enter Custom Streamer</span>
+                        </button>
+                      </div>
+                    </>
+                  ) : (
+                    /* Manual Input Form */
+                    <div className="p-4 space-y-4 ">
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="text-[#40FFFF] font-['Rajdhani'] font-semibold text-sm tracking-wide">
+                          CUSTOM STREAMER
+                        </h3>
+                        <button
+                          onClick={() => setShowManualInput(false)}
+                          className="text-gray-400 hover:text-[#40FFFF] transition-colors"
+                        >
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                          </svg>
+                        </button>
+                      </div>
+
+                      <div>
+                        <label className="block text-[#40FFFF]/80 font-['Rajdhani'] text-xs font-semibold mb-1.5 tracking-wide">
+                          STREAMER NAME
+                        </label>
+                        <input
+                          type="text"
+                          value={manualName}
+                          onChange={(e) => setManualName(e.target.value)}
+                          className="w-full bg-black/50 border border-[#40FFFF]/30 rounded-lg px-3 py-2 text-white font-['Exo_2'] text-sm focus:outline-none focus:border-[#40FFFF] transition-all"
+                          placeholder="Enter name..."
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-[#40FFFF]/80 font-['Rajdhani'] text-xs font-semibold mb-1.5 tracking-wide">
+                          EMAIL ADDRESS
+                        </label>
+                        <input
+                          type="email"
+                          value={manualEmail}
+                          onChange={(e) => setManualEmail(e.target.value)}
+                          className="w-full bg-black/50 border border-[#40FFFF]/30 rounded-lg px-3 py-2 text-white font-['Exo_2'] text-sm focus:outline-none focus:border-[#40FFFF] transition-all"
+                          placeholder="Enter email..."
+                        />
+                      </div>
+
+                      <button
+                        onClick={handleManualSubmit}
+                        disabled={!manualName.trim() || !manualEmail.trim()}
+                        className="w-full bg-[#40FFFF] hover:bg-[#33E6E6] text-black font-['Rajdhani'] font-bold py-2.5 rounded-lg transition-all duration-300 shadow-[0_0_15px_rgba(64,255,255,0.5)] hover:shadow-[0_0_20px_rgba(64,255,255,0.7)] uppercase tracking-wider text-sm disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#40FFFF]"
+                      >
+                        Continue
+                      </button>
+                    </div>
+                  )}
                 </div>
               )}
             </div>
@@ -276,7 +429,7 @@ export default function Home() {
           {/* Regenerate Button */}
           {selectedStreamer && (
             <button
-              onClick={() => generateMessage(selectedStreamer)}
+              onClick={() => generateMessage(selectedStreamer.name, selectedStreamer.platform || "their platform")}
               disabled={isGenerating}
               className="w-full bg-black/50 border-2 border-[#40FFFF]/50 hover:border-[#40FFFF] text-[#40FFFF] font-['Rajdhani'] font-semibold py-3 rounded-lg transition-all duration-300 hover:shadow-[0_0_15px_rgba(64,255,255,0.4)] uppercase tracking-wider flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
             >
@@ -352,7 +505,7 @@ export default function Home() {
           )}
 
           <div className="flex items-center justify-center">
-            <Link href={'https://www.instagram.com/p/DM26Wv8sTBT/'} className="text-center text-gray-400 mb-8 font-['Rajdhani'] underline underline-offset-4 font-bold text-md ">
+            <Link target="_blank" href={'https://www.instagram.com/reel/DPwaoAPDCmh/'} className="text-center text-gray-400 mb-8 font-['Rajdhani'] underline underline-offset-4 font-bold text-md ">
               TAG YOUR FAVOURITE CREATOR ON INSTAGRAM
             </Link>
           </div>
@@ -361,3 +514,4 @@ export default function Home() {
     </div>
   );
 }
+               

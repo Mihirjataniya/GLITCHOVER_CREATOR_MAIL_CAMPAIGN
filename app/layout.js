@@ -26,7 +26,7 @@ export const Metadata = {
   description: "Stop watching. Start playing. Glitchover turns live streams into interactive gaming experience! Connect, play, and engage like never before!",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }) { 
   return (
     <html lang="en" className={`${orbitron.variable} ${rajdhani.variable} ${exo2.variable}`}>
       <body>{children}</body>
