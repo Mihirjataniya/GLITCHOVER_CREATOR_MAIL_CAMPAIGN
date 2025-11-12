@@ -1,6 +1,7 @@
 import { Orbitron, Rajdhani, Exo_2 } from 'next/font/google';
 import "./globals.css";
 
+
 const orbitron = Orbitron({
   subsets: ['latin'],
   variable: '--font-orbitron',
@@ -19,6 +20,11 @@ const exo2 = Exo_2({
   variable: '--font-exo-2',
   display: 'swap',
 });
+
+export const Metadata = {
+  title: "Glitchover",
+  description: "Stop watching. Start playing. Glitchover turns live streams into interactive gaming experience! Connect, play, and engage like never before!",
+};
 
 export default function RootLayout({ children }) {
   return (

@@ -9,12 +9,12 @@ export const emailTemplates = [
 `
   },
   {
-    subject: "Bhai ye Glitchover cheez dekh ke full excited ho gaya hu.",
+    subject: "Yaar ye Glitchover cheez dekh ke full excited ho gaya hu.",
     message: `Hey {{streamerName}},  
 WCG me dekha ye website dekhi jahan streamers fans ke saath khelte hain. Please aap start karo, main to har baar join karne aa jaunga. Literally can’t wait! Glitchover use karo!`
   },
   {
-    subject: "Sir, will you please use this thing?",
+    subject: "Hey, will you please use this thing?",
     message: `I am here at the WCG event in Vashi. I just heard about Glitchover. It’s a website where fans can pay to game with you. This is such an awesome idea. I am ready to pay and play. Please use Glitchover soon!`
   },
   {
@@ -26,12 +26,8 @@ WCG me dekha ye website dekhi jahan streamers fans ke saath khelte hain. Please 
     message: `I was talking to some people at the Cidco convention center today. They showed me Glitchover. It lets me pay a little bit to finally game with you. When will you start using Glitchover so I can join your squad?`
   },
   {
-    subject: "Main aapke saath khelna chahta hu",
-    message: `Hi {{streamerName}}, At WCG I heard about Glitchover, where fans can join the creators live. It sounded like a dream come true. Aap please try karo na, ek baar chance mil jaaye. Please use Glitchover.`
-  },
-  {
     subject: "WCG event se ek request hai",
-    message: `Sir, main abhi WCG National Showdown mein hoon. Maine aur mere doston ne Glitchover ke baare me suna. Ismein hum log aapke saath game khelne ke liye pay kar sakte hain. Hum sab aapke bahut bade fan hain aur aapke saath khelna chahte hain. Please yeh use karo. Bahut maza aayega aapke saath khel ke.`
+    message: `Hey, main abhi WCG National Showdown mein hoon. Maine aur mere doston ne Glitchover ke baare me suna. Ismein hum log aapke saath game khelne ke liye pay kar sakte hain. Hum sab aapke bahut bade fan hain aur aapke saath khelna chahte hain. Please yeh use karo. Bahut maza aayega aapke saath khel ke.`
   },
   {
     subject: "Glitchover ka concept bahut tagda hai!",
@@ -42,7 +38,7 @@ WCG me dekha ye website dekhi jahan streamers fans ke saath khelte hain. Please 
     message: `I learned about Glitchover today at WCG. It’s a simple, direct way to give you support and get a game slot in return. I am already saving up for a match. Will you please use it soon?`
   },
   {
-    subject: "Glitchover use karke dekho sir!",
+    subject: "Glitchover use karke dekho please!",
     message: `Mujhe abhi WCG mein Glitchover ke baare mein pata chala. Agar aap isko use karte ho, toh hum fans ke liye guaranteed chance milega aapse khelne ka. Please start this for us. Hum to kabse khelna chahte hai.`
   },
   {
@@ -55,7 +51,7 @@ WCG me dekha ye website dekhi jahan streamers fans ke saath khelte hain. Please 
   },
   {
     subject: "Aapki game mein aana hai!",
-    message: `Main abhi WCG mein hoon. Yahan pata chala Glitchover ke baare mein. Fans pay karke aapki lobby mein aa sakte hain. Sir, please use Glitchover. Hum sab bahut excited hain to play!.`
+    message: `Main abhi WCG mein hoon. Yahan pata chala Glitchover ke baare mein. Fans pay karke aapki lobby mein aa sakte hain. Yaar, please use Glitchover. Hum sab bahut excited hain to play!.`
   },
   {
     subject: "Can you play with fans through Glitchover?",
@@ -71,7 +67,7 @@ WCG me dekha ye website dekhi jahan streamers fans ke saath khelte hain. Please 
   },
   {
     subject: "Ek game toh banta hai!",
-    message: `Main abhi WCG mein hoon. Yahan Glitchover ke baare mein suna, jahan hum fans pay karke aapke saath khel sakte hain. Sir, kitna time lagega aapko Glitchover use karne mein? Hum sab bahut excited hain aapke saath team banane ke liye!`
+    message: `Main abhi WCG mein hoon. Yahan Glitchover ke baare mein suna, jahan hum fans pay karke aapke saath khel sakte hain. Yaar, kitna time lagega aapko Glitchover use karne mein? Hum sab bahut excited hain aapke saath team banane ke liye!`
   },
   {
     subject: "Aap Glitchover kab start karoge?",
@@ -106,11 +102,11 @@ WCG me dekha ye website dekhi jahan streamers fans ke saath khelte hain. Please 
     message: `Hey  {{streamerName}}, Main WCG National Showdown pe tha aur waha ek idea suna, Glitchover. Isse fans aapke saath game khel sakte hain. Agar aap use karo to main sabse pehle join karunga. Please start using Glitchover!`
   },
   {
-    subject: "Bro aapko Glitchover try karna chahiye",
+    subject: "Dude aapko Glitchover try karna chahiye",
     message: `Hello {{streamerName}}, how are you. So, I was at WCG National Showdown today and heard about Glitchover. Fans can actually play with their fav creators. Aap bhi try karo na, ek match with you would be crazy. I'd love to you support you this way. Please use Glitchover!`
   },
   {
-    subject: "Bro please start playing with us",
+    subject: "Dude please start playing with us",
     message: `Hi {{streamerName}}, I was at WCG National Showdown and got to know about Glitchover. If you start doing fan matches there, main har baar join karne wala hu. Ye regular scene hona chahiye. Start using Glitchover now!`
   },
   {

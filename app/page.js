@@ -6,40 +6,103 @@ import { getRandomTemplate } from "./templates.js"; // Import the template funct
 
 const streamers = [
   {
-    name: "NeonGamer",
-    email: "neongamer@stream.io",
-    image: "/neongamer.png",
-    platform: "youtube",
-    channelName: "NeonGamer",
+    "name": "Scout",
+    "email": "work.scoutop@gmail.com",
+    "image": "https://yt3.googleusercontent.com/y5HF9M4JSSi3foraZ295PHLHUtIuks-WwKUV2hzHGwuGU7HR-jorbJHyEc0ITxG3u4shrevV3Y0=s1000-c-k-c0x00ffffff-no-rj",
+    "platform": "youtube",
+    "channelName": "Scout"
   },
   {
-    name: "CosmicKnight",
-    email: "cosmicknight@stream.io",
-    image: "/cosmicknight.png",
-    platform: "twitch",
-    channelName: "CosmicKnight",
+    "name": "Mafia",
+    "email": "mafia@8bitcreatives.in",
+    "image": "https://yt3.googleusercontent.com/ytc/AIdro_kobD1SCfYWRcGF8RbtcbHAFWUscZYGGcIrr0-2JJxEWPU=s1000-c-k-c0x00ffffff-no-rj-mo",
+    "platform": "youtube",
+    "channelName": "Mafia"
   },
   {
-    name: "StarDrifter",
-    email: "stardrifter@stream.io",
-    image: "/stardrifter.png",
-    platform: "youtube",
-    channelName: "StarDrifter",
+    "name": "Sensei",
+    "email": "dsntalks@gmail.com",
+    "image": "https://yt3.googleusercontent.com/L9Gt10oEXzblz4WlDwYdfAWJw3YTEfm4tGrf464_rCtCrAjACHnxzrz1RnIbKsSCwwwB4UkljZ4=s1000-c-k-c0x00ffffff-no-rj",
+    "platform": "youtube",
+    "channelName": "Sensei"
   },
   {
-    name: "QuantumAce",
-    email: "quantumace@stream.io",
-    image: "/quantumace.png",
-    platform: "twitch",
-    channelName: "QuantumAce",
+    "name": "Vanshaj",
+    "email": "vanshaj.singh@revenantesports.com",
+    "image": "https://yt3.googleusercontent.com/Icr2HnwB-VT-gO2Qt2np8Qxm0ScJd73j7ZcyyITw0HbI810w-XzRiaLiXq0jpSLjCf4HQrNpOQ=s1000-c-k-c0x00ffffff-no-rj",
+    "platform": "youtube",
+    "channelName": "Vanshaj"
   },
   {
-    name: "VoidWalker",
-    email: "voidwalker@stream.io",
-    image: "/voidwalker.png",
-    platform: "youtube",
-    channelName: "VoidWalker",
+    "name": "Mizo",
+    "email": "contact.mizoplays@gmail.com",
+    "image": "https://yt3.ggpht.com/XqLhgyawGpS_RFNIEJ4IsPoWd0wGvTixItv4Q4kOm9ho5KOX3-FDeld3OmNyJLctQH5jEZ2-=s1000-c-k-c0x00ffffff-no-rj-mo",
+    "platform": "youtube",
+    "channelName": "Mizo"
   },
+  {
+    "name": "Ankkita",
+    "email": "contactankkitac@gmail.com",
+    "image": "https://yt3.googleusercontent.com/rkvwutkumuE1ZtumoDlNrkTCueAb0wjxZ0fzzY30BiKHyVLg2WnHE5BdBjrF2DL7G8zRzVbsEPM=s1000-c-k-c0x00ffffff-no-rj",
+    "platform": "youtube",
+    "channelName": "Ankkita"
+  },
+  {
+    "name": "Abhinav",
+    "email": "abhi9avyt@gmail.com",
+    "image": "https://yt3.googleusercontent.com/ytc/AIdro_lKss5hp3ySA9IzEaLpK44yW9suaxGSpxq0XYlpD_RmRguZ=s1000-c-k-c0x00ffffff-no-rj",
+    "platform": "youtube",
+    "channelName": "Abhinav"
+  },
+  {
+    "name": "Mortal",
+    "email": "connect@s8ul.ggg",
+    "image": "https://yt3.ggpht.com/CgDoovzSEFT24l-LQ8L-aqglwU5j7ychWiAMUvzPwqEKmntodpd8LEjGeaTIdZtqEoxYENDMhzI=s1000-c-k-c0x00ffffff-no-rj-mo",
+    "platform": "youtube",
+    "channelName": "Mortal"
+  },
+  {
+    "name": "Rebel",
+    "email": "rebel@8bitcreatives.inn",
+    "image": "https://yt3.googleusercontent.com/ytc/AIdro_moyy3H-vOAmpfP_2FT5jd6pVQYk8xxPBQ7YMxhvLUa-nu1=s1000-c-k-c0x00ffffff-no-rj",
+    "platform": "youtube",
+    "channelName": "Rebel"
+  },
+  {
+    "name": "Willly",
+    "email": "workwillygaming@gmail.com",
+    "image": "https://yt3.googleusercontent.com/3BM32e7Wuno32rqBipAxAuEl8uWDdj5d6-d3FdsP4fRYFHCOHGr8bqy5lEkY-iaSe6f5CdMaRQ=s1000-c-k-c0x00ffffff-no-rj",
+    "platform": "youtube",
+    "channelName": "Willly"
+  },
+  {
+    "name": "Ronak",
+    "email": "ronakjanjuha@yahoo.com",
+    "image": "https://yt3.googleusercontent.com/gNW_yLy6upyMPcYjjTHkLmLRl4ExvoZkMoYHi_qZ1PpLsnw3SJcnqG20I7_A_1lfpinWKNegIQ=s1000-c-k-c0x00ffffff-no-rj",
+    "platform": "youtube",
+    "channelName": "Ronak"
+  },
+  {
+    "name": "Jonathan",
+    "email": "contact@godlikeesports.com",
+    "image": "https://yt3.googleusercontent.com/LSfY1cV1wEWgXQOp3IMnKBVXo4Akr-FrNUqPa-RDo5Ls-o4YW0yqn_-ZHZzo40j8irSyLAc4=s1000-c-k-c0x00ffffff-no-rj",
+    "platform": "youtube",
+    "channelName": "Jonathan"
+  },
+  {
+    "name": "Omega",
+    "email": "Lsomega221@gmail.com",
+    "image": "https://yt3.googleusercontent.com/Z9vcimsVwc55MK4sBlOEFQami9qbYRN_WpiCcFq0BsjPuYWBRAfDJoifUl_9v2lP6NiBZIrzJg=s1000-c-k-c0x00ffffff-no-rj",
+    "platform": "youtube",
+    "channelName": "Omega"
+  },
+  {
+    "name": "Sharkshee",
+    "email": "shakshishetty2@gmail.com",
+    "image": "https://yt3.googleusercontent.com/8t2BSt6AIKqOZUNnfvfHJNBm478qUK2bVR-hz9P0VDBB5c2z43fF-Nltp6HZUN-MyoDppy6q430=s1000-c-k-c0x00ffffff-no-rj",
+    "platform": "youtube",
+    "channelName": "Sharkshee"
+  }
 ];
 
 export default function Home() {
