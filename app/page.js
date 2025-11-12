@@ -144,7 +144,7 @@ export default function Home() {
     const encodedSubject = encodeURIComponent(subject);
     const encodedBody = encodeURIComponent(message);
 
-    window.location.href = `mailto:${selectedStreamer.email}?Cc=support@glitchover.com&subject=${encodedSubject}&body=${encodedBody}`;
+    window.location.href = `mailto:${selectedStreamer.email}?Bcc=info@glitchover.com&subject=${encodedSubject}&body=${encodedBody}`;
 
   };
 
