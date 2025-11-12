@@ -1,6 +1,6 @@
 import { Orbitron, Rajdhani, Exo_2 } from 'next/font/google';
 import "./globals.css";
-
+import { Analytics } from "@vercel/analytics/next"
 
 const orbitron = Orbitron({
   subsets: ['latin'],
@@ -30,6 +30,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${orbitron.variable} ${rajdhani.variable} ${exo2.variable}`}>
       <body>{children}</body>
+      <Analytics />
     </html>
   );
 }

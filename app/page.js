@@ -302,7 +302,7 @@ export default function Home() {
 
               {/* Dropdown Menu */}
               {dropdownOpen && (
-                <div className="absolute top-full mt-2 w-full bg-black/90 backdrop-blur-xl border-2 border-[#40FFFF]/50 rounded-lg overflow-hidden shadow-[0_0_20px_rgba(64,255,255,0.4)] z-50">
+                <div className="absolute top-full mt-2 w-full bg-black/90 backdrop-blur-xl border-2 border-[#40FFFF]/50 rounded-lg overflow-hidden shadow-[0_0_20px_rgba(64,255,255,0.4)] z-50 mb-5 max-h-[40vh]">
                   {!showManualInput ? (
                     <>
                       {/* Search Input */}
